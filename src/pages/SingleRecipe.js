@@ -8,10 +8,23 @@ class SingleRecipe extends Component {
     const routeId = this.props.match.params.id;
 
     this.state = {
-      recipe: recipeData,
+      //recipe: recipeData,
+      recipe: {},
       id: routeId,
-      loading: false
+      loading: true
     };  
+  }
+
+  async componentDidMount(){
+    const url = `https://www.food2fork.com/api/get?key=${process.env.REACT_APP_API_KEY}&rId=${this.state.id}`;
+    try{
+      const res = await fetch(url);
+      const resData = await res.json();
+      this.setState({recipe: resData.recipe, loading: false })
+    }
+    catch(err){
+      console.log(err);
+    }
   }
 
   render() {
@@ -23,12 +36,13 @@ class SingleRecipe extends Component {
         title, 
         ingredients
     } = this.state.recipe;
+
     if(this.state.loading){
       return (
         <div className="container">
           <div className="row">
             <div className="col-10 col-md-6 mx-auto my-3">
-              <h2 className="text-uppercase text-orange text-center">loading recipes....</h2>
+              <i className="fas fa-cogs fa-4x fa-spin text-warning"/>
             </div>
           </div>
         </div>
