@@ -42,7 +42,7 @@ class SingleRecipe extends Component {
         <div className="container">
           <div className="row">
             <div className="col-10 col-md-6 mx-auto my-3">
-              <i className="fas fa-cogs fa-4x fa-spin text-warning"/>
+              <span className=" text-uppercase display-4 text-muted">loading....</span> {' '}<i className="fas fa-cog fa-6x fa-spin text-danger mt-5 "/>
             </div>
           </div>
         </div>
