@@ -16,7 +16,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' render={() => <Home/>} />
             <Route exact path='/recipes' render={() => <Recipes/>} />
-            <Route exact path='/recipes/:id' render={() => <SingleRecipe/>} />
+            <Route exact path='/recipes/:id' render={routeProps => <SingleRecipe {...routeProps}/>} />
             <Route component={Default}/>
           </Switch>
         </>
