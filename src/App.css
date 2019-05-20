@@ -13,3 +13,9 @@ body{
 .letter-spacing{
     letter-spacing: 0.5rem;
 }
+
+.header-hero{
+    min-height: calc(100vh - 47px);
+    background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.3)), 
+    url(./images/homeBcg.jpeg) center/cover no-repeat;
+}
