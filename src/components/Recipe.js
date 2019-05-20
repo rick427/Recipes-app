@@ -30,7 +30,7 @@ class Recipe extends Component {
               href={source_url} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="btn btn-warning mx-4 text-capitalize">recipe url
+              className="btn btn-success mx-4 text-capitalize">recipe url
             </a>
           </div>
         </div>
